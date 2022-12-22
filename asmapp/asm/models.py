@@ -7,6 +7,9 @@ class Users(models.Model):
     PasswordUsers = models.CharField(max_length=45)
     PhoneNumberUsers = models.CharField(max_length=45)
 
+    def __str__(self):
+       return f"{self.nameUsers} {self.surnameUsers}"
+
 class MedicalSupplies(models.Model):
     nameMedicalSupplies = models.CharField(max_length=45)
     typeMedicalSupplies = models.CharField(max_length=45)
@@ -15,6 +18,9 @@ class MedicalSupplies(models.Model):
     expirationMedicalSupplies = models.CharField(max_length=45)
     buyDateMedicalSupplies = models.CharField(max_length=45)
     buyerMedicalSupplies = models.ForeignKey(Users, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+       return f"{self.nameMedicalSupplies} {self.quantityMedicalSupplies}"
 
 class ElectronicSupplies(models.Model):
     nameElectronicSupplies = models.CharField(max_length=45)
@@ -25,6 +31,9 @@ class ElectronicSupplies(models.Model):
     buyDateElectronicSupplies = models.CharField(max_length=45)
     buyerElectronicSupplies = models.ForeignKey(Users, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+       return f"{self.nameElectronicSupplies} {self.quantityElectronicSupplies}"
+
 class CleaningSupplies(models.Model):
     nameCleaningSupplies = models.CharField(max_length=45)
     typeCleaningSupplies = models.CharField(max_length=45)
@@ -34,6 +43,9 @@ class CleaningSupplies(models.Model):
     buyDateCleaningSupplies = models.CharField(max_length=45)
     buyerCleaningSupplies = models.ForeignKey(Users, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+       return f"{self.nameCleaningSupplies} {self.quantityCleaningSupplies}"
+
 class FoodSupplies(models.Model):
     nameFoodSupplies = models.CharField(max_length=45)
     typeFoodSupplies = models.CharField(max_length=45)
@@ -42,3 +54,7 @@ class FoodSupplies(models.Model):
     expirationFoodSupplies = models.CharField(max_length=45)
     buyDateFoodSupplies = models.CharField(max_length=45)   
     buyerFoodSupplies = models.ForeignKey(Users, on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+       return f"{self.nameFoodSupplies} {self.quantityFoodSupplies}"
+
