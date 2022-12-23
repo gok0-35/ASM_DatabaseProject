@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Users(models.Model):
-    nameUsers = models.CharField(max_length=45, default = '')
-    surnameUsers = models.CharField(max_length=45, default = '')
-    passwordUserss = models.CharField(max_length=45, default = '')
-    phoneNumberUsers = models.CharField(max_length=45, default = '')
-    emailUsers = models.CharField(max_length=45, default = '')
+    nameUsers = models.CharField(max_length=45)
+    surnameUsers = models.CharField(max_length=45)
+    passwordUserss = models.CharField(max_length=45)
+    phoneNumberUsers = models.CharField(max_length=45)
+    emailUsers = models.CharField(max_length=45)
 
     def __str__(self):
        return f"{self.nameUsers} {self.surnameUsers}"
