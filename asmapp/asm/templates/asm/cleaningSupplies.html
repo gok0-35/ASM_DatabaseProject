@@ -40,7 +40,7 @@ Gökmen Soysal Family Health Center Project
                          </a>
                      </li>
                      <li>
-                         <a class="nav-link" href="{% url 'MedicalSupplies' %}">
+                         <a class="nav-link" href="{% url 'medicalSupplies' %}">
                              <i class="nc-icon nc-notes"></i>
                              <p>Medical Supplies</p>
                          </a>
@@ -86,85 +86,30 @@ Gökmen Soysal Family Health Center Project
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Expenses of Cleaning Supplies </h4>
+                                    <h4 class="card-title">Expenses and Quantity of Cleaning Supplies </h4>
                                     <p class="card-category">Expenses of doctors in registered ASM</p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                            <th>Buyer ID</th>
-                                            <th>Supply ID</th>
-                                            <th>Cost</th>
+                                            <th>Buyer</th>
+                                            <th>Supply Name</th>
                                             <th>Quantity</th>
-                                            <th>Date of Purchase</th>
+                                            <th>Total Price</th>
+                                            <th>Purchase Date</th>
                                         </thead>
                                         <tbody>
+
+                                            {% for cleaningSupplies in cleaningSupplies %}
                                             <tr>
-                                                <td>1004</td>
-                                                <td>4003</td>
-                                                <td>150</td>
-                                                <td>10</td>
-                                                <td>9.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1002</td>
-                                                <td>4004</td>
-                                                <td>255</td>
-                                                <td>5</td>
-                                                <td>7.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1003</td>
-                                                <td>4002</td>
-                                                <td>365</td>
-                                                <td>2</td>
-                                                <td>1.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1005</td>
-                                                <td>4001</td>
-                                                <td>404</td>
-                                                <td>11</td>
-                                                <td>8.11.2022</td>
-                                            </tr> 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="card card-plain table-plain-bg">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Cleaning Supplies</h4>
-                                    <p class="card-category">IDs and what they are equivalent to</p>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <th>ID</th>
-                                            <th>Name</th>          
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>4001</td>
-                                                <td>Floor Cleaner</td>
-                                               
-                                            </tr>
-                                            <tr>
-                                                <td>4002</td>
-                                                <td>Mop</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>4003</td>
-                                                <td>Soap</td>
-                                              
-                                            </tr>
-                                            <tr>
-                                                <td>4004</td>
-                                                <td>Window Cleaner</td>
-                                              
-                                            </tr> 
+                                                <td> {{cleaningSupplies.buyerCleaningSupplies}} </td>
+                                                <td> {{cleaningSupplies.nameCleaningSupplies}} </td>
+                                                <td> {{cleaningSupplies.quantityCleaningSupplies}} </td>
+                                                <td> {{cleaningSupplies.priceCleaningSupplies}} </td>
+                                                <td> {{cleaningSupplies.buyDateCleaningSupplies}} </td>
+                                            </tr>    
+                                             {% endfor %}
+
                                         </tbody>
                                     </table>
                                 </div>

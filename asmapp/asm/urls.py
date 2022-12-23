@@ -5,9 +5,8 @@ from . import views
 
 urlpatterns = [
    path("", views.WelcomePage, name='WelcomePage'),
-   path("MedicalSupplies", views.MedicalSupplies, name='MedicalSupplies'),
+   path("medicalSupplies", views.medicalSupplies, name='medicalSupplies'),
    path("foodSupplies", views.foodSupplies, name='foodSupplies'),
    path("electronicSupplies", views.electronicSupplies, name='electronicSupplies'),
-   path("cleaningSupplies", views.MedicalSupplies, name='cleaningSupplies'),
-   path("AddSupplies", views.AddSupplies, name='AddSupplies')
+   path("cleaningSupplies", views.cleaningSupplies, name='cleaningSupplies'),
 ]

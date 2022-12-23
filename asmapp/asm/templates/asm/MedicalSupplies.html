@@ -40,7 +40,7 @@ Gökmen Soysal Family Health Center Project
                          </a>
                      </li>
                      <li>
-                         <a class="nav-link" href="{% url 'MedicalSupplies' %}">
+                         <a class="nav-link" href="{% url 'medicalSupplies' %}">
                              <i class="nc-icon nc-notes"></i>
                              <p>Medical Supplies</p>
                          </a>
@@ -86,97 +86,32 @@ Gökmen Soysal Family Health Center Project
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Expenses of Medical Supplies </h4>
+                                    <h4 class="card-title">Expenses and Quantity of Medical Supplies </h4>
                                     <p class="card-category">Expenses of doctors in registered ASM</p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                            <th>Buyer ID</th>
-                                            <th>Supply ID</th>
-                                            <th>Cost</th>
+                                            <th>Buyer</th>
+                                            <th>Supply Name</th>
                                             <th>Quantity</th>
-                                            <th>Date of Purchase</th>
+                                            <th>Total Price</th>
+                                            <th>Purchase Date</th>
+                                            <th>Expiration Date</th>
                                         </thead>
                                         <tbody>
+
+                                          {% for medicalSupplies in medicalSupplies %}
                                             <tr>
-                                                <td>1001</td>
-                                                <td>2001</td>
-                                                <td>850</td>
-                                                <td>100</td>
-                                                <td>11.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1004</td>
-                                                <td>2005</td>
-                                                <td>600</td>
-                                                <td>55</td>
-                                                <td>9.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1002</td>
-                                                <td>2004</td>
-                                                <td>720</td>
-                                                <td>8</td>
-                                                <td>16.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1003</td>
-                                                <td>2002</td>
-                                                <td>1033</td>
-                                                <td>75</td>
-                                                <td>21.11.2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1005</td>
-                                                <td>2003</td>
-                                                <td>951</td>
-                                                <td>9</td>
-                                                <td>27.11.2022</td>
-                                            </tr> 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="card card-plain table-plain-bg">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Medical Supplies</h4>
-                                    <p class="card-category">IDs and what they are equivalent to</p>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <th>ID</th>
-                                            <th>Name</th>          
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2001</td>
-                                                <td>Vaccine</td>
-                                               
-                                            </tr>
-                                            <tr>
-                                                <td>2002</td>
-                                                <td>First Aid Kit</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>2003</td>
-                                                <td>Medicine</td>
-                                              
-                                            </tr>
-                                            <tr>
-                                                <td>2004</td>
-                                                <td>Spunch</td>
-                                              
-                                            </tr>
-                                            <tr>
-                                                <td>2005</td>
-                                                <td>Bandage</td>
-                                               
-                                            </tr>   
+                                                <td> {{medicalSupplies.buyerMedicalSupplies}} </td>
+                                                <td> {{medicalSupplies.nameMedicalSupplies}} </td>
+                                                <td> {{medicalSupplies.quantityMedicalSupplies}} </td>
+                                                <td> {{medicalSupplies.priceMedicalSupplies}} </td>
+                                                <td> {{medicalSupplies.buyDateMedicalSupplies}} </td>
+                                                <td> {{medicalSupplies.expirationMedicalSupplies}} </td>
+                                            </tr>    
+                                             {% endfor %}
+                                           
                                         </tbody>
                                     </table>
                                 </div>

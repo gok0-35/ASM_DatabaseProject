@@ -9,40 +9,40 @@ from .models import FoodSupplies
 def WelcomePage(request):
     return render(request, "asm/WelcomePage.html")
 
-def MedicalSupplies(request):
+def medicalSupplies(request):
     medicalSupplies = MedicalSupplies.objects.all()
 
     context = {
-        "medicalSupplies" = medicalSupplies
+        "medicalSupplies": medicalSupplies
     }
 
-    return render(request, "asm/MedicalSupplies.html")
+    return render(request, "asm/MedicalSupplies.html", context)
 
 def foodSupplies(request):
     foodSupplies = FoodSupplies.objects.all()
 
     context = {
-        "foodSupplies" = foodSupplies
+        "foodSupplies": foodSupplies
     }
 
-    return render(request, "asm/foodSupplies.html")
+    return render(request, "asm/foodSupplies.html", context)
 
 def electronicSupplies(request):
     electronicSupplies = ElectronicSupplies.objects.all()
 
     context = {
-        "electronicSupplies" = electronicSupplies
+        "electronicSupplies": electronicSupplies
     }
 
-    return render(request, "asm/electronicSupplies.html")
+    return render(request, "asm/electronicSupplies.html", context)
 
 def cleaningSupplies(request):
     cleaningSupplies = CleaningSupplies.objects.all()
 
     context = {
-        "cleaningSupplies" = cleaningSupplies
+        "cleaningSupplies": cleaningSupplies
     }
 
-    return render(request, "asm/cleaningSupplies.html")
+    return render(request, "asm/cleaningSupplies.html", context)
 
  
